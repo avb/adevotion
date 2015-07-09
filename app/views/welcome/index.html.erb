@@ -1,1 +1,15 @@
-<h1>A Bible Verse</h1>
+
+<p class="text-right">
+  <%= @verseToday.post_date.strftime("%A, %B %d, %Y") %>
+</p>
+
+<p class="verse-title text-center">
+  <%= @verseToday.title %>
+</p>
+
+<p>
+  <%= @verseToday.text %>
+</p>
+
+ 
+<hr>

@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Cfa</title>
+  <title>A Bible Devotion</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
 
+    <header>
+      <h1 class="text-center">A Bible Devotion</h1>
+
+      <hr />
+    </header>
+
+    <%= yield %>
+  </div>
 </body>
 </html>

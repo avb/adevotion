@@ -7,14 +7,29 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 case Rails.env
-  Verse.delete_all
-  
-  Dir.foreach('db/daily') do |filename|
-    next if filename == '.' or filename == '..' or filename == '.DS_Store'
-    File.open('db/daily/'+filename) do |file|
-      title = file.gets
-      text = file.readlines.drop(1).join()
-      post_date = Time.zone.parse(filename)
-      Verse.create(title: title.to_s, text: text.to_s, post_date: post_date)
+  when 'development'
+    Verse.delete_all
+    
+    Dir.foreach('db/daily') do |filename|
+      next if filename == '.' or filename == '..' or filename == '.DS_Store'
+      File.open('db/daily/'+filename) do |file|
+        title = file.gets
+        text = file.readlines.drop(1).join()
+        post_date = Time.zone.parse(filename)
+        Verse.create(title: title.to_s, text: text.to_s, post_date: post_date)
+      end
+    end
+
+  when 'production'
+    Verse.delete_all
+    
+    Dir.foreach('db/daily') do |filename|
+      next if filename == '.' or filename == '..' or filename == '.DS_Store'
+      File.open('db/daily/'+filename) do |file|
+        title = file.gets
+        text = file.readlines.drop(1).join()
+        post_date = Time.zone.parse(filename)
+        Verse.create(title: title.to_s, text: text.to_s, post_date: post_date)
+      end
     end
 end

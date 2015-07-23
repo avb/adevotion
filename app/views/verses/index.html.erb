@@ -1,24 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<% @verses.each do |verse| %>
-  <p class="text-right">
-    <%= verse.post_date.strftime("%A, %B %d, %Y") %>
-  </p>
+<p class="text-center">
+  Here are some of our messages.<br>
+  New messages are being written all the time.<br>
+  Subscribe to our list below to get all the latest messages by daily email. <br>
+</p>
 
-  <p class="verse-title text-center">
-    <%= verse.title %>
-  </p>
+<p class="text-center">
+  <% @verses.each do |verse| %>
+    <%= link_to verse.title, verse %>
+    <br>
+  <% end %>
+</p>
 
-  <p>
-    <%= verse.text %>
-  </p>
-
-   
-  <hr>
-  <%= link_to 'Show', verse %>
-  <%= link_to 'Edit', edit_verse_path(verse) %>
-  <%= link_to 'Destroy', verse, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
 
 <br>
 

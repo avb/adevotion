@@ -19,3 +19,23 @@ header {
   }
 
 }
+
+.signup-form {
+	font-style: italic;
+	font-size: .75em;
+	margin-bottom: 0px;
+}
+
+#mce-success-response {
+    clear: both;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: lightgreen;
+}
+
+#mce-error-response {
+    clear: both;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: lightpink;
+}

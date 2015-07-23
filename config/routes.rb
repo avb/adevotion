@@ -1,12 +1,29 @@
 Rails.application.routes.draw do
   resources :verses
+
   get 'welcome/index'
+  get "/feed" => "welcome#feed", :as => "feed"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+  get  'archive' => 'verses#index'
+
+  get  'faq' => 'welcome#faq'
+  get  'faq.htm', to: redirect('faq')
+
+  get  'rss' => 'welcome#rss'
+  get  'rss.htm', to: redirect('rss')
+
+  get  'biblelist' => 'welcome#biblelist'
+  get  'biblelist.htm', to: redirect('biblelist')
+
+  get  'donation' => 'welcome#donation'
+  get  'donation.htm', to: redirect('donation')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

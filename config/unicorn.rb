@@ -8,7 +8,7 @@ else
 
 	# Unicorn PID file location
 	# pid "/path/to/pids/unicorn.pid"
-	pid "/var/www/adevotion/pids/unicorn.pid"
+	pid "/tmp/adevotion/pids/unicorn.pid"
 
 	# Path to logs
 	# stderr_path "/path/to/log/unicorn.log"

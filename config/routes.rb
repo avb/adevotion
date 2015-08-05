@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :verses
 
-  get 'welcome/index'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get "/feed" => "welcome#feed", :as => "feed"
 
 
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get  'archive' => 'verses#index'
+  get  'archive/:id', to: 'verses#show', as: 'verse'
 
   get  'faq' => 'welcome#faq'
   get  'faq.htm', to: redirect('faq')

@@ -8,12 +8,7 @@
 
 <p class="text-center">
   <% @verses.each do |verse| %>
-    <%= link_to verse.title, verse %>
+    <%= link_to verse.title, archive_path(verse) %>
     <br>
   <% end %>
 </p>
-
-
-<br>
-
-<%= link_to 'New Verse', new_verse_path %>

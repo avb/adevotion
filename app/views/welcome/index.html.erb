@@ -1,13 +1,17 @@
 
-<p class="text-right">
-  <%= @verseToday.post_date.strftime("%A, %B %d, %Y") %>
-</p>
-
-<p class="verse-title text-center">
-  <%= @verseToday.title %>
-</p>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <p class="text-right">
+      <%= @verseToday.post_date.strftime("%A, %B %d, %Y") %>
+    </p>
+    <h3 class="text-center"><%= @verseToday.title %></h3>
+  </div>
+  <div class="col-md-2"></div>
+</div>
 
 <div class="row">
+
   <div class="col-md-2"></div>
 
   <div class="col-md-8">
@@ -16,7 +20,8 @@
     </p>
   </div>
 
-  <div class="row"></div>
+  <div class="col-md-2"></div>
+</div>    
 
 <hr>
 
@@ -65,16 +70,7 @@
 
 <p>&nbsp;</p>
 
-<p class="text-center">
-  Previous messages:
-  <%= link_to "1 day ago", @verseYesterday %> -
-  <%= link_to "2 days back", @verse2DaysAgo %> -
-  <%= link_to "3 days back", @verse3DaysAgo %> <br>
-  <%= link_to "4 days back", @verse4DaysAgo %> -
-  <%= link_to "5 days back", @verse5DaysAgo %> -
-  <%= link_to "6 days back", @verse6DaysAgo %> -
-  <%= link_to "7 days back", @verse7DaysAgo %>
-</p>
+
 
 <p class="text-center">
   You may also enjoy receiving <a href="http://abibleverse.org/">daily Bible verses</a> by email.
@@ -102,12 +98,6 @@
 
 <p class="text-center">
   RSS Link
-</p>
-
-<hr>
-
-<p class="text-center">
-  email: <%= link_to "web@aDevotion.org", "mailto:web@aDevotion.org" %> | <%= link_to "www.aDevotion.org", "http://www.aDevotion.org" %>
 </p>
 
 

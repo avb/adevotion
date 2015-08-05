@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<p class="text-right">
+  <%= @verse.post_date.strftime("%A, %B %d, %Y") %>
+</p>
+
+<p class="verse-title text-center">
   <%= @verse.title %>
 </p>
 
-<p>
-  <strong>Text:</strong>
-  <%= simple_format(@verse.text) %>
-</p>
+<div class="row">
+  <div class="col-md-2"></div>
 
-<p>
-  <strong>Post date:</strong>
-  <%= @verse.post_date %>
-</p>
-
-<%= link_to 'Edit', edit_verse_path(@verse) %> |
-<%= link_to 'Back', verses_path %>
+  <div class="col-md-8">
+    <p class="text">
+    <%= simple_format(@verse.text) %>
+    </p>
+  </div>
+</div>

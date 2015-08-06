@@ -29,9 +29,16 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: db/test.sqlite3
+  <<: *mysql
+  database: cfa_test
+  username: root
+  password: 
+  socket: /tmp/mysql.sock
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  <<: *mysql
+  database: adevotion_production
+  username: root
+  password: 
+  socket: /tmp/mysql.sock
+

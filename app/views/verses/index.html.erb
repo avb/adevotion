@@ -1,14 +1,18 @@
+<% provide(:title, "A Bible Devotion Messages") %>
+
 <p id="notice"><%= notice %></p>
 
 <p class="text-center">
-  Here are some of our messages.<br>
-  New messages are being written all the time.<br>
+  Here are some of our messages.
+</p>
+
+<p class="text-center">
   Subscribe to our list below to get all the latest messages by daily email. <br>
 </p>
 
 <p class="text-center">
   <% @verses.each do |verse| %>
-    <%= link_to verse.title, archive_path(verse) %>
+    <%= link_to verse.title, verse %>
     <br>
   <% end %>
 </p>

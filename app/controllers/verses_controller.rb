@@ -4,7 +4,7 @@ class VersesController < ApplicationController
   # GET /verses
   # GET /verses.json
   def index
-    @verses = Verse.all.order('post_date DESC')
+    @verses = Verse.all.where("DATE(post_date) <= ?", Date.today).order('post_date DESC')
   end
 
   # GET /verses/1

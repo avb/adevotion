@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get "/feed" => "welcome#feed", :as => "feed"
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,6 +11,10 @@ Rails.application.routes.draw do
 
   get  'archive' => 'verses#index'
   get  'archive/:id', to: 'verses#show', as: 'verse'
+
+  get 'feed' => 'verses#index', :as => :feed, :defaults => { :format => 'atom' }
+  get 'daily.xml' => 'verses#index', :as => :oldfeed, :defaults => { :format => 'atom' }
+
 
   get  'faq' => 'welcome#faq'
   get  'faq.htm', to: redirect('faq')

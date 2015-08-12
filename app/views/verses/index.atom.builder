@@ -5,7 +5,7 @@ atom_feed do |feed|
   @verses.each do |verse|
     feed.entry verse, published: verse.post_date do |entry|
       entry.title verse.title
-      entry.content verse.text
+      entry.content simple.format(verse.text)
     end
   end
 

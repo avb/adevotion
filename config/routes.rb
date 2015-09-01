@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   get  'donation' => 'welcome#donation'
   get  'donation.htm', to: redirect('donation')
+  get  'give', to: redirect('donation')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

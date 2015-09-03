@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
 
@@ -87,7 +88,7 @@
 </p>
 
 <p class="text-center">
-  <%= link_to image_tag("rssicon.gif"), feed_url(format: 'atom') %>
+  <%= link_to image_tag("rssicon.gif"), rss_path %>
 </p>
 
   <hr>

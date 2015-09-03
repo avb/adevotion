@@ -60,12 +60,4 @@ class WelcomeController < ApplicationController
   def donation
   end
 
-   def feed
-    @verses = Verse.all.order('post_date DESC')
-
-    respond_to do |format|
-      format.html
-      format.atom { render :layout => false } #index.atom.builder
-    end
-  end
 end

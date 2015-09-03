@@ -4,7 +4,12 @@ class VersesController < ApplicationController
   # GET /verses
   # GET /verses.json
   def index
-    @verses = Verse.all.where("DATE(post_date) <= ?", Date.today).order('post_date DESC')
+    @verses = Verse.all.where("DATE(post_date) <= ?", Date.today).order('title ASC')
+
+    respond_to do |format|
+      format.html
+      format.atom { render :verses => @verses } #index.atom.builder
+    end
   end
 
   # GET /verses/1

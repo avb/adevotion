@@ -9,23 +9,23 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get  'archive' => 'verses#index'
+  get  'archive/' => 'verses#index'
   get  'archive/:id', to: 'verses#show', as: 'verse'
 
-  get 'feed' => 'verses#index', :as => :feed, :defaults => { :format => 'atom' }
+  get 'feed/' => 'verses#index', :as => :feed, :defaults => { :format => 'atom' }
   get 'daily.xml' => 'verses#index', :as => :oldfeed, :defaults => { :format => 'atom' }
 
 
-  get  'faq' => 'welcome#faq'
+  get  'faq/' => 'welcome#faq'
   get  'faq.htm', to: redirect('faq')
 
-  get  'rss' => 'welcome#rss'
+  get  'rss/' => 'welcome#rss'
   get  'rss.htm', to: redirect('rss')
 
-  get  'biblelist' => 'welcome#biblelist'
+  get  'biblelist/' => 'welcome#biblelist'
   get  'biblelist.htm', to: redirect('biblelist')
 
-  get  'donation' => 'welcome#donation'
+  get  'donation/' => 'welcome#donation'
   get  'donation.htm', to: redirect('donation')
   get  'give', to: redirect('donation')
 

@@ -60,4 +60,7 @@ class WelcomeController < ApplicationController
   def donation
   end
 
+  def thanks
+  end
+
 end

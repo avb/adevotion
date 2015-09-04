@@ -5,11 +5,6 @@ class VersesController < ApplicationController
   # GET /verses.json
   def index
     @verses = Verse.all.where("DATE(post_date) <= ?", Date.today).order('title ASC')
-
-    respond_to do |format|
-      format.html
-      format.atom { render :verses => @verses } #index.atom.builder
-    end
   end
 
   # GET /verses/1
@@ -63,6 +58,14 @@ class VersesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to verses_url, notice: 'Verse was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def feed
+    @verses = Verse.all.where("DATE(post_date) <= ?", Date.today).order('post_date DESC')
+
+    respond_to do |format|
+      format.atom { headers["Content-Type"] = 'application/atom+xml; charset=utf-8' }
     end
   end
 

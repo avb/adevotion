@@ -41,7 +41,7 @@ group :development, :test do
 
 end
 
-group :production
+group :production do
   gem 'newrelic_rpm'
 end
 

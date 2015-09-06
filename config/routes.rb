@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   get  'thanks' => 'welcome#thanks'
   get  'thanks.htm', to: redirect('thanks')
 
+  get  'mailinglist-thankyou' => 'welcome#confirmation'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

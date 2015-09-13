@@ -37,7 +37,7 @@ test:
 
 production:
   <<: *mysql
-  database: adevotion_production
-  username: root
-  password: 
+  database: c1_adevotion_production
+  username: c1_adevotion
+  password: zfU_MNaZl8Qg
   socket: /var/run/mysqld/mysqld.sock

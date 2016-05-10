@@ -145,7 +145,7 @@ class VersesController < ApplicationController
   end
 
   def feed
-    @verses = Verse.all.where("DATE(post_date) <= ?", Date.today).order('post_date DESC')
+    @verses = Verse.all.where("DATE(post_date) = ?", Date.today).order('post_date DESC')
 
     respond_to do |format|
       format.atom { headers["Content-Type"] = 'application/atom+xml; charset=utf-8' }
@@ -155,7 +155,7 @@ class VersesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_verse
-      @verse = Verse.friendly.find(params[:id])
+      @verse = Verse.friendly.find(params[:id].dasherize.parameterize)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -3,7 +3,7 @@ feed_options = {
   # set feed language, default is 'en-US'
   language: 'en-US',
   #set url for feed, default to current URL
-  url: 'http://adevotion.org'
+  url: 'http://adevotion.org/feed/'
 }
 
 atom_feed feed_options do |feed|
@@ -14,7 +14,10 @@ atom_feed feed_options do |feed|
   @verses.each do |verse|
     feed.entry verse, published: verse.post_date, updated: verse.post_date do |entry|
       entry.title verse.title.strip
-      entry.content markdown verse.text
+      entry.author do |author|
+        author.name('A Devotion')
+      end
+      entry.content(markdown(verse.text), type: 'html')
     end
   end
 

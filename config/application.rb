@@ -24,4 +24,8 @@ module Cfa
     config.active_record.raise_in_transactional_callbacks = true
     config.time_zone = 'Central Time (US & Canada)'
   end
+
+  Raven.configure do |config|
+    config.dsn = 'https://b531dea05eb747d9b4cf9da6c68536f3:4d93ba54ecc24f36a8d9feb246fa3c7f@sentry.io/140953'
+  end
 end

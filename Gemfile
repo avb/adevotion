@@ -20,6 +20,7 @@ gem 'pundit'
 gem 'draper'
 gem 'redcarpet'
 gem 'newrelic_rpm'
+gem 'sentry-raven'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
